@@ -1,7 +1,7 @@
-const listarUsuarios = async() => {
-    const dados = await fetch("./listar.php");
+const listarUsuarios = async(pagina) => {
+    const dados = await fetch("./listar.php?pagina=" + pagina);
     const resposta = await dados.json();
-    console.log(resposta);
+    //console.log(resposta);
 
     if (!resposta['status']) {
         document.getElementById("msgAlerta").innerHTML = resposta['msg'];
@@ -13,4 +13,4 @@ const listarUsuarios = async() => {
     }
 }
 
-listarUsuarios();
+listarUsuarios(1);
