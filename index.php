@@ -38,26 +38,27 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <span id="msgAlertaErro"></span> <!-- Mensagem no modal caso dê erro ao cadastrar -->
                     <!-- Inicio Formulário -->
                     <form class="row g-3" id="cad-usuario-form">
                         <div class="col-12">
                             <label for="nome" class="form-label">Nome:</label>
-                            <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do usuário..." required>
+                            <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do usuário...">
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">E-mail:</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail do usuário..." required>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail do usuário..." >
                         </div>
                         <div class="col-12">
                             <label for="logradouro" class="form-label">Endereço:</label>
-                            <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do usuário..." required>
+                            <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do usuário..." >
                         </div>
                         <div class="col-12">
                             <label for="numero" class="form-label">Nº:</label>
-                            <input type="text" name="numero" class="form-control" id="numero" placeholder="Número..." required>
+                            <input type="text" name="numero" class="form-control" id="numero" placeholder="Número..." >
                         </div>
                             <div class="col-12">
-                                <input type="submit" class="btn btn-outline-primary btn-md" id="cas-usuario-btn" value="Cadastrar">
+                                <input type="submit" class="btn btn-outline-primary btn-md" id="cad-usuario-btn" value="Cadastrar">
                             </div>
                     </form>
                     <!-- Fim Formulário -->

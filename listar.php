@@ -18,7 +18,7 @@ if (!empty($pagina)) {
                     ende.logradouro, ende.numero
                     FROM usuarios AS usr 
                     LEFT JOIN enderecos AS ende ON ende.usuario_id=usr.id
-                    ORDER BY usr.id ASC
+                    ORDER BY usr.id DESC
                     LIMIT $inicio, $qnt_result_pg";
     $result_usuarios = $conn->prepare($query_usuarios);
     $result_usuarios->execute();
@@ -90,10 +90,10 @@ if (!empty($pagina)) {
 
         $retorna = ['status' => true, 'dados' => $dados, 'quantidade_pg' => $quantidade_pg];
     } else {
-        $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!</p>"];
+        $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</p>"];
     }
 } else {
-    $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!</p>"];
+    $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</p>"];
 }
 
 echo json_encode($retorna);
