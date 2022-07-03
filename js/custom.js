@@ -15,7 +15,6 @@ const listarUsuarios = async(pagina) => {
 
 listarUsuarios(1);
 
-// Cadastrar registros em duas tabelas no BD
 const cadUsuarioForm = document.getElementById("cad-usuario-form");
 
 // Receber o seletor da janela modal
@@ -29,7 +28,7 @@ if (cadUsuarioForm) {
 
         const dadosForm = new FormData(cadUsuarioForm);
 
-        // Mudando nome no botão para depois de clicar em "Cadastrar"
+        // Mudando nome no botão depois do click
         document.getElementById("cad-usuario-btn").value = "Salvando...";
 
         //console.log("Acesso!!!");
@@ -52,12 +51,15 @@ if (cadUsuarioForm) {
             cadUsuarioModel.hide(); // Fechando o formulário após cadastrar
             listarUsuarios(1); // Atualizando os dados após cadastrar
         }
-
         // Mudando nome do botão para o original
         document.getElementById("cad-usuario-btn").value = "Cadastrar";
-
     })
+}
 
-
-
+// Visualisar os dados do registro em um modal
+async function visUsuario(id) {
+    //console.log(id);
+    // await = Aguarda o processamento e só vai para a próxima linha quando a consulta atual for finalizada
+    const dados = await fetch('visualizar.php?id=' + id);
+    await dados.json();
 }

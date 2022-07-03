@@ -9,7 +9,7 @@ $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 if (!empty($pagina)) {
 
     // Calcular o inicio da visualizacao
-    $qnt_result_pg = 4; // Quantidade de registros por pagina
+    $qnt_result_pg = 6; // Quantidade de registros por pagina
     $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
     // Criar a QUERY para recuperar os registros do BD
@@ -45,7 +45,11 @@ if (!empty($pagina)) {
             $dados .= "<td>$email</td>";
             $dados .= "<td>$logradouro</td>";
             $dados .= "<td>$numero</td>";
-            $dados .= "<td>Visualizar Editar Apagar</td>";
+            $dados .= "<td>
+                            <a href='#' class='btn btn-outline-primary btn-sm' onclick='visUsuario($id)'>Visualizar</a>
+                            <a href='#' class='btn btn-outline-warning btn-sm' onclick='editUsuario($id)'>Editar</a>
+                            <a href='#' class='btn btn-outline-danger btn-sm' onclick='delUsuario($id)'>Apagar</a>
+                        </td>";
             $dados .= "</tr>";
         }
         $dados .= "</tbody>";
