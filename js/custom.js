@@ -61,5 +61,12 @@ async function visUsuario(id) {
     //console.log(id);
     // await = Aguarda o processamento e só vai para a próxima linha quando a consulta atual for finalizada
     const dados = await fetch('visualizar.php?id=' + id);
-    await dados.json();
+    const resposta = await dados.json();
+    console.log(resposta);
+
+    if (!resposta['status']) {
+        document.getElementById('msgAlerta').innerHTML = resposta['msg'];
+    } else {
+        document.getElementById('msgAlerta').innerHTML = "";
+    }
 }
