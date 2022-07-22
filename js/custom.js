@@ -68,5 +68,13 @@ async function visUsuario(id) {
         document.getElementById('msgAlerta').innerHTML = resposta['msg'];
     } else {
         document.getElementById('msgAlerta').innerHTML = "";
+        const visModal = new bootstrap.Modal(document.getElementById('visUsuarioModal'));
+        visModal.show();
+
+        document.getElementById("idUsuario").innerHTML = resposta['dados'].id;
+        document.getElementById("nomeUsuario").innerHTML = resposta['dados'].nome;
+        document.getElementById("emailUsuario").innerHTML = resposta['dados'].email;
+        document.getElementById("logradouroUsuario").innerHTML = resposta['dados'].logradouro;
+        document.getElementById("numeroUsuario").innerHTML = resposta['dados'].numero;
     }
 }

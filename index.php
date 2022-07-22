@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <!-- Inicio Modal -->
+    <!-- Inicio Modal cadastrar -->
     <div class="modal fade" id="cadUsuarioModal" tabindex="-1" aria-labelledby="cadUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -70,7 +70,43 @@
             </div>
         </div>
     </div>
-    <!-- Fim Modal -->
+    <!-- Fim Modal cadastrar-->
+
+    <!-- Inicio Modal visualisar -->
+    <div class="modal fade" id="visUsuarioModal" tabindex="-1" aria-labelledby="visUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visUsuarioModalLabel">Cadastrar Usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="msgAlertaErroVis"></span> <!-- Mensagem no modal caso dê erro ao cadastrar -->
+                    <dl class="row">
+                        <dt class="col-sm-3">ID</dt>
+                        <dd class="col-sm-9"><span id="idUsuario"></span></dd>
+
+                        <dt class="col-sm-3">Nome</dt>
+                        <dd class="col-sm-9"><span id="nomeUsuario"></span></dd>
+
+                        <dt class="col-sm-3">E-mail</dt>
+                        <dd class="col-sm-9"><span id="emailUsuario"></span></dd>
+
+                        <dt class="col-sm-3">Logradouro</dt>
+                        <dd class="col-sm-9"><span id="logradouroUsuario"></span></dd>
+
+                        <dt class="col-sm-3">Número</dt>
+                        <dd class="col-sm-9"><span id="numeroUsuario"></span></dd>
+                    </dl>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal visualisar -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
