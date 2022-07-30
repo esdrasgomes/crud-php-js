@@ -78,3 +78,8 @@ async function visUsuario(id) {
         document.getElementById("numeroUsuario").innerHTML = resposta['dados'].numero;
     }
 }
+
+// Editar os dados do registro em um modal
+async function editUsuarioDados(id) {
+
+}

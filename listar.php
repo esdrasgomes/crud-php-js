@@ -47,7 +47,7 @@ if (!empty($pagina)) {
             $dados .= "<td>$numero</td>";
             $dados .= "<td>
                             <a href='#' class='btn btn-outline-primary btn-sm' onclick='visUsuario($id)'>Visualizar</a>
-                            <a href='#' class='btn btn-outline-warning btn-sm' onclick='editUsuario($id)'>Editar</a>
+                            <a href='#' class='btn btn-outline-warning btn-sm' onclick='editUsuarioDados($id)'>Editar</a>
                             <a href='#' class='btn btn-outline-danger btn-sm' onclick='delUsuario($id)'>Apagar</a>
                         </td>";
             $dados .= "</tr>";
