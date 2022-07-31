@@ -81,5 +81,19 @@ async function visUsuario(id) {
 
 // Editar os dados do registro em um modal
 async function editUsuarioDados(id) {
+    const dados = await fetch('visualizar.php?id=' + id);
+    const resposta = await dados.json();
+    console.log(resposta);
 
+    if (!resposta['status']) {
+        document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+    } else {
+        const editModal = new bootstrap.Modal(document.getElementById("editUsuarioModal"));
+        editModal.show();
+        document.getElementById("editid").value = resposta['dados'].id;
+        document.getElementById("editnome").value = resposta['dados'].nome;
+        document.getElementById("editemail").value = resposta['dados'].email;
+        document.getElementById("editlogradouro").value = resposta['dados'].logradouro;
+        document.getElementById("editnumero").value = resposta['dados'].numero;
+    }
 }

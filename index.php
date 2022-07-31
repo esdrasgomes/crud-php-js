@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <!-- Inicio Modal cadastrar -->
+    <!-- Inicio Modal cadastrar registro -->
     <div class="modal fade" id="cadUsuarioModal" tabindex="-1" aria-labelledby="cadUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -70,14 +70,14 @@
             </div>
         </div>
     </div>
-    <!-- Fim Modal cadastrar-->
+    <!-- Fim Modal cadastrar registro -->
 
-    <!-- Inicio Modal visualisar -->
+    <!-- Inicio Modal visualisar registro -->
     <div class="modal fade" id="visUsuarioModal" tabindex="-1" aria-labelledby="visUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="visUsuarioModalLabel">Cadastrar Usuário</h5>
+                    <h5 class="modal-title" id="visUsuarioModalLabel">Visualizar Usuário</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -106,8 +106,59 @@
             </div>
         </div>
     </div>
-    <!-- Fim Modal visualisar -->
+    <!-- Fim Modal visualisar registro -->
 
+    <!-- Inicio Modal editar registro -->
+    <div class="modal fade" id="editUsuarioModal" tabindex="-1" aria-labelledby="editUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUsuarioModal">Editar Usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="msgAlertaErroEdit"></span> <!-- Mensagem no modal caso dê erro ao cadastrar -->
+                    <!-- Inicio Formulário -->
+                    <form class="row g-3" id="edit-usuario-form">
+                        <div class="col-12">
+                            <label for="nome" class="form-label">ID:</label>
+                            <input type="text" name="id" class="form-control" id="editid">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" name="nome" class="form-control" id="editnome" placeholder="Nome do usuário...">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" name="email" class="form-control" id="editemail" placeholder="E-mail do usuário..." >
+                        </div>
+
+                        <div class="col-12">
+                            <label for="logradouro" class="form-label">Endereço:</label>
+                            <input type="text" name="logradouro" class="form-control" id="editlogradouro" placeholder="Endereço do usuário..." >
+                        </div>
+
+                        <div class="col-12">
+                            <label for="numero" class="form-label">Nº:</label>
+                            <input type="text" name="numero" class="form-control" id="editnumero" placeholder="Número..." >
+                        </div>
+
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-outline-primary btn-md" id="cad-usuario-btn" value="Cadastrar">
+                            </div>
+                    </form>
+                    <!-- Fim Formulário -->
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal editar registro -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="js/custom.js"></script>
