@@ -120,10 +120,10 @@
                     <span id="msgAlertaErroEdit"></span> <!-- Mensagem no modal caso dê erro ao cadastrar -->
                     <!-- Inicio Formulário -->
                     <form class="row g-3" id="edit-usuario-form">
-                        <div class="col-12">
-                            <label for="nome" class="form-label">ID:</label>
-                            <input type="text" name="id" class="form-control" id="editid">
-                        </div>
+                        <!-- <div class="col-12">
+                            <label for="nome" class="form-label">ID:</label> -->
+                            <input type="hidden" name="id" id="editid">
+                        <!-- </div> -->
 
                         <div class="col-12">
                             <label for="nome" class="form-label">Nome:</label>

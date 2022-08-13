@@ -79,7 +79,7 @@ async function visUsuario(id) {
     }
 }
 
-// Editar os dados do registro em um modal
+// Recuperar os dados dos registros
 async function editUsuarioDados(id) {
     const dados = await fetch('visualizar.php?id=' + id);
     const resposta = await dados.json();
@@ -96,4 +96,21 @@ async function editUsuarioDados(id) {
         document.getElementById("editlogradouro").value = resposta['dados'].logradouro;
         document.getElementById("editnumero").value = resposta['dados'].numero;
     }
+}
+
+// Editar os dados do registro em um modal
+const editForm = document.getElementById("edit-usuario-form");
+if (editForm) {
+    editForm.addEventListener("submit", async(e) => {
+        e.preventDefault();
+
+        const dadosForm = new FormData(editForm);
+
+        await fetch("editar.php", {
+            method: "POST",
+            body: dadosForm
+        });
+    });
+} else {
+
 }
