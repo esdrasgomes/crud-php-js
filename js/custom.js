@@ -81,6 +81,7 @@ async function visUsuario(id) {
 
 // Recuperar os dados dos registros
 async function editUsuarioDados(id) {
+    document.getElementById("msgAlertaErroEdit").innerHTML = "";
     const dados = await fetch('visualizar.php?id=' + id);
     const resposta = await dados.json();
     console.log(resposta);
@@ -106,11 +107,24 @@ if (editForm) {
 
         const dadosForm = new FormData(editForm);
 
-        await fetch("editar.php", {
+        // Mudando nome no botão depois do click
+        document.getElementById("edit-usuario-btn").value = "Salvando...";
+
+        const dados = await fetch("editar.php", {
             method: "POST",
             body: dadosForm
         });
-    });
-} else {
+        const resposta = await dados.json();
+        console.log(resposta);
 
+        if (!resposta['status']) {
+            document.getElementById("msgAlertaErroEdit").innerHTML = resposta['msg'];
+        } else {
+            document.getElementById("msgAlertaErroEdit").innerHTML = resposta['msg'];
+            listarUsuarios(1);
+        }
+
+        document.getElementById("edit-usuario-btn").value = "Salvar";
+
+    });
 }

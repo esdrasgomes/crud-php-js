@@ -28,19 +28,19 @@
 
             // Editar no BD dentro da tabela 'enderecos'
             $query_endereco = "UPDATE enderecos SET logradouro=:logradouro, numero=:numero WHERE usuario_id=:usuario_id";
-            $edit_usuario = $conn -> prepare($query_endereco);
-            $edit_usuario -> bindParam(':logradouro', $dados['logradouro']);
-            $edit_usuario -> bindParam(':numero', $dados['numero']);
-            $edit_usuario -> bindParam(':usuario_id', $dados['id']);
+            $edit_endereco = $conn -> prepare($query_endereco);
+            $edit_endereco -> bindParam(':logradouro', $dados['logradouro']);
+            $edit_endereco -> bindParam(':numero', $dados['numero']);
+            $edit_endereco -> bindParam(':usuario_id', $dados['id']);
 
             // Verificar se editou endereço
-            if ($edit_usuario->execute()) {
-                $retorna = ['status' => true, 'msg' => "<div class='alert alert-success' role='alert'>Usuário cadastrado com sucesso!</div>"];
+            if ($edit_endereco->execute()) {
+                $retorna = ['status' => true, 'msg' => "<div class='alert alert-success' role='alert'>Usuário editado com sucesso!</div>"];
             } else {
-                $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Não foi possível cadastrar o usuário!"];
+                $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Não foi possível editar o usuário!"];
             }
         } else {
-            $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Não foi possível cadastrar o usuário!"];
+            $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Não foi possível editar o usuário!"];
         }
 
     }

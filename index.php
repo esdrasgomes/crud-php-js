@@ -146,7 +146,7 @@
                         </div>
 
                             <div class="col-12">
-                                <input type="submit" class="btn btn-outline-primary btn-md" id="cad-usuario-btn" value="Cadastrar">
+                                <input type="submit" class="btn btn-outline-primary btn-md" id="edit-usuario-btn" value="Editar">
                             </div>
                     </form>
                     <!-- Fim Formulário -->
