@@ -128,3 +128,24 @@ if (editForm) {
 
     });
 }
+
+// Apagar o registro no bd
+
+async function apagarUsuarioDados(id) {
+
+    var confirmar = confirm("Tem certeza que deseja excluir o registro selecionado?");
+
+    if (confirmar == true) {
+        const dados = await fetch('apagar_cascata.php?id=' + id);
+        const resposta = await dados.json();
+        //console.log(resposta);
+
+        if (!resposta['status']) {
+            document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+        } else {
+            document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+            listarUsuarios(1);
+        }
+    }
+
+}
