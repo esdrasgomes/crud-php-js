@@ -147,5 +147,4 @@ async function apagarUsuarioDados(id) {
             listarUsuarios(1);
         }
     }
-
 }

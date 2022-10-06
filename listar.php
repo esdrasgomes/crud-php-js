@@ -30,7 +30,7 @@ if (!empty($pagina)) {
         $dados .= "<th>ID</th>";
         $dados .= "<th>Nome</th>";
         $dados .= "<th>E-mail</th>";
-        $dados .= "<th>Logradouro</th>";
+        $dados .= "<th>Endereço</th>";
         $dados .= "<th>Número</th>";
         $dados .= "<th>Ações</th>";
         $dados .= "</tr>";
